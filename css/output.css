@@ -1,0 +1,86 @@
+/* ==========================================================================
+   OUTPUT / EXPORT PAGE STYLESHEET (css/output.css)
+   ========================================================================== */
+
+.output-page {
+  background: #090d16;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Floating Export Control Bar */
+.floating-bar {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.output-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.output-info h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.badge-mode {
+  background: var(--primary);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.output-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Main Presentation Canvas */
+.output-viewport {
+  flex: 1;
+  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: radial-gradient(circle at center, #1e293b 0%, #090d16 100%);
+}
+
+.output-frame {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+/* Print Rules */
+@media print {
+  .floating-bar, .navbar {
+    display: none !important;
+  }
+  .output-viewport {
+    padding: 0 !important;
+    background: none !important;
+  }
+  .output-frame {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
+}

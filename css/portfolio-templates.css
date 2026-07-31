@@ -1,0 +1,433 @@
+/* ==========================================================================
+   PORTFOLIO TEMPLATES STYLESHEET (css/portfolio-templates.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   THEME 1: MODERN GLASSMORPHISM (theme-glass)
+   -------------------------------------------------------------------------- */
+.pf-theme-glass {
+  background: #0b0f19;
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  min-height: 100%;
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.pf-theme-glass .pf-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-theme-glass .pf-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pf-theme-glass .pf-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6366f1;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+  flex-shrink: 0;
+}
+
+.pf-theme-glass .pf-hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+}
+
+.pf-theme-glass .pf-role {
+  font-size: 1.1rem;
+  color: #818cf8;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pf-theme-glass .pf-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 600px;
+}
+
+.pf-theme-glass .pf-section {
+  margin-bottom: 3rem;
+}
+
+.pf-theme-glass .pf-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-theme-glass .pf-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), transparent);
+}
+
+.pf-theme-glass .pf-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.pf-theme-glass .pf-project-card {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.pf-theme-glass .pf-project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.5);
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.pf-theme-glass .pf-project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.pf-theme-glass .pf-project-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.pf-theme-glass .pf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.pf-theme-glass .pf-tag {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.pf-theme-glass .pf-links {
+  display: flex;
+  gap: 12px;
+}
+
+.pf-theme-glass .pf-link-btn {
+  font-size: 0.8rem;
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pf-theme-glass .pf-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pf-theme-glass .pf-skill-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 2: MINIMALIST ELEGANT (theme-minimal)
+   -------------------------------------------------------------------------- */
+.pf-theme-minimal {
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100%;
+  padding: 3rem 2.5rem;
+  box-sizing: border-box;
+}
+
+.pf-theme-minimal .pf-hero {
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pf-theme-minimal h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.2rem;
+}
+
+.pf-theme-minimal .pf-role {
+  font-size: 1.2rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.pf-theme-minimal .pf-bio {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+.pf-theme-minimal .pf-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: grayscale(80%);
+}
+
+.pf-theme-minimal .pf-section-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+.pf-theme-minimal .pf-projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pf-theme-minimal .pf-project-card {
+  border-left: 3px solid #0f172a;
+  padding-left: 1.25rem;
+}
+
+.pf-theme-minimal .pf-project-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.pf-theme-minimal .pf-project-desc {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+.pf-theme-minimal .pf-skill-badge {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 3: CREATIVE VIBRANT (theme-vibrant)
+   -------------------------------------------------------------------------- */
+.pf-theme-vibrant {
+  background: #111827;
+  color: #f9fafb;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100%;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+
+.pf-theme-vibrant .pf-hero {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  color: #fff;
+  margin-bottom: 3rem;
+  box-shadow: 0 15px 35px rgba(236, 72, 153, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pf-theme-vibrant .pf-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+}
+
+.pf-theme-vibrant .pf-hero-content h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.pf-theme-vibrant .pf-role {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.pf-theme-vibrant .pf-project-card {
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #374151;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.pf-theme-vibrant .pf-project-title {
+  color: #f472b6;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.pf-theme-vibrant .pf-skill-badge {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 4: DEVELOPER TERMINAL (theme-terminal)
+   -------------------------------------------------------------------------- */
+.pf-theme-terminal {
+  background: #0d1117;
+  color: #58a6ff;
+  font-family: 'Fira Code', monospace;
+  min-height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.pf-theme-terminal .pf-hero {
+  border: 1px solid #30363d;
+  background: #161b22;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.pf-theme-terminal .terminal-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.pf-theme-terminal .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.pf-theme-terminal .dot-red { background: #ff5f56; }
+.pf-theme-terminal .dot-yellow { background: #ffbd2e; }
+.pf-theme-terminal .dot-green { background: #27c93f; }
+
+.pf-theme-terminal h1 {
+  font-size: 1.8rem;
+  color: #79c0ff;
+  margin-bottom: 0.3rem;
+}
+
+.pf-theme-terminal h1::before {
+  content: '$ ';
+  color: #7ee787;
+}
+
+.pf-theme-terminal .pf-role {
+  color: #ffa657;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pf-theme-terminal .pf-bio {
+  color: #8b949e;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.pf-theme-terminal .pf-section-title {
+  color: #7ee787;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.pf-theme-terminal .pf-section-title::before {
+  content: '> ';
+}
+
+.pf-theme-terminal .pf-project-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.pf-theme-terminal .pf-project-title {
+  color: #d2a8ff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pf-theme-terminal .pf-project-desc {
+  color: #8b949e;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.pf-theme-terminal .pf-skill-badge {
+  background: #21262d;
+  color: #79c0ff;
+  border: 1px solid #30363d;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}

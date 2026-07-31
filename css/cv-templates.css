@@ -1,0 +1,298 @@
+/* ==========================================================================
+   CV / RESUME TEMPLATES STYLESHEET (css/cv-templates.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   THEME 1: PROFESSIONAL EXECUTIVE (cv-theme-executive)
+   -------------------------------------------------------------------------- */
+.cv-theme-executive {
+  background: #ffffff;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  padding: 3rem 3rem;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+.cv-theme-executive .cv-header {
+  border-bottom: 2px solid #1e293b;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cv-theme-executive .cv-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.cv-theme-executive .cv-title {
+  font-size: 1.1rem;
+  color: #475569;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.cv-theme-executive .cv-contact-list {
+  text-align: right;
+  font-size: 0.82rem;
+  color: #475569;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cv-theme-executive .cv-section {
+  margin-bottom: 1.75rem;
+}
+
+.cv-theme-executive .cv-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 4px;
+  margin-bottom: 1rem;
+}
+
+.cv-theme-executive .cv-summary-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.cv-theme-executive .cv-item {
+  margin-bottom: 1.25rem;
+}
+
+.cv-theme-executive .cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3px;
+}
+
+.cv-theme-executive .cv-item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.cv-theme-executive .cv-item-subtitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.cv-theme-executive .cv-item-date {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.cv-theme-executive .cv-item-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.cv-theme-executive .cv-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cv-theme-executive .cv-skill-pill {
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 2: MODERN MINIMAL RESUME (cv-theme-modern)
+   -------------------------------------------------------------------------- */
+.cv-theme-modern {
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 3rem 2.5rem;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+.cv-theme-modern .cv-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px double #e2e8f0;
+}
+
+.cv-theme-modern .cv-name {
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.cv-theme-modern .cv-title {
+  font-size: 1.1rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cv-theme-modern .cv-contact-inline {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 0.8rem;
+}
+
+.cv-theme-modern .cv-section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-theme-modern .cv-section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: #6366f1;
+}
+
+.cv-theme-modern .cv-item {
+  border-left: 2px solid #e2e8f0;
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.cv-theme-modern .cv-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+}
+
+.cv-theme-modern .cv-item-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.cv-theme-modern .cv-item-subtitle {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 3: CREATIVE SIDEBAR RESUME (cv-theme-sidebar)
+   -------------------------------------------------------------------------- */
+.cv-theme-sidebar {
+  display: flex;
+  min-height: 100%;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.cv-theme-sidebar .cv-sidebar {
+  width: 32%;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.cv-theme-sidebar .cv-avatar-sidebar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 3px solid #6366f1;
+}
+
+.cv-theme-sidebar .cv-main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.cv-theme-sidebar .sidebar-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #818cf8;
+  margin-bottom: 0.75rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #334155;
+}
+
+.cv-theme-sidebar .sidebar-group {
+  margin-bottom: 1.75rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.cv-theme-sidebar .cv-main .cv-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.cv-theme-sidebar .cv-main .cv-title {
+  font-size: 1.05rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   PRINT OPTIMIZATION RULES (A4 PAGE FIT)
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  
+  body {
+    background: #fff !important;
+  }
+  
+  .cv-theme-executive, .cv-theme-modern, .cv-theme-sidebar {
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  .cv-item {
+    page-break-inside: avoid;
+  }
+}

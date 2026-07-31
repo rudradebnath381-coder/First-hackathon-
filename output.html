@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Output & Export - Profile Craft</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/output.css">
+  <link rel="stylesheet" href="css/portfolio-templates.css">
+  <link rel="stylesheet" href="css/cv-templates.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="brand-text">
+        <h1>Profile Craft</h1>
+        <span>Portfolio & CV Builder</span>
+      </div>
+    </a>
+
+    <div class="step-indicator">
+      <div class="step-item completed"><span class="step-num"><i class="fa-solid fa-check"></i></span> Setup</div>
+      <div class="step-divider"></div>
+      <div class="step-item completed"><span class="step-num"><i class="fa-solid fa-check"></i></span> Template</div>
+      <div class="step-divider"></div>
+      <div class="step-item completed"><span class="step-num"><i class="fa-solid fa-check"></i></span> Fill Details</div>
+      <div class="step-divider"></div>
+      <div class="step-item active"><span class="step-num">4</span> Output</div>
+    </div>
+  </nav>
+
+  <!-- FLOATING EXPORT CONTROL BAR -->
+  <div class="floating-bar">
+    <div class="output-info">
+      <h2>Generated Output View</h2>
+      <span class="badge-mode" id="modeBadge">PORTFOLIO</span>
+    </div>
+
+    <div class="output-actions">
+      <a href="builder.html" class="btn btn-sm"><i class="fa-solid fa-pen-to-square"></i> Edit Details</a>
+      <a href="choose.html" class="btn btn-sm"><i class="fa-solid fa-palette"></i> Change Theme</a>
+      <button class="btn btn-sm" id="btnExportJson"><i class="fa-solid fa-file-export"></i> Save JSON</button>
+      <button class="btn btn-primary btn-sm" id="btnDownloadHtml"><i class="fa-solid fa-download"></i> Download HTML</button>
+      <button class="btn btn-accent btn-sm" id="btnPrintPdf"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+    </div>
+  </div>
+
+  <!-- MAIN CANVAS -->
+  <main class="output-viewport">
+    <div class="output-frame" id="outputFrame">
+      <!-- Generated HTML rendered here -->
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="js/templates.js"></script>
+  <script src="js/exporter.js"></script>
+  <script src="js/storage.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const profile = AppStorage.getProfile();
+      const mode = AppStorage.getMode();
+      const templateId = AppStorage.getTemplate();
+
+      const outputFrame = document.getElementById('outputFrame');
+      const modeBadge = document.getElementById('modeBadge');
+
+      modeBadge.textContent = mode.toUpperCase();
+
+      if (mode === 'portfolio') {
+        outputFrame.innerHTML = TemplateGenerators.renderPortfolio(profile, templateId);
+      } else {
+        outputFrame.innerHTML = TemplateGenerators.renderCV(profile, templateId);
+      }
+
+      document.getElementById('btnDownloadHtml').addEventListener('click', () => {
+        Exporter.downloadHTML(profile, mode, templateId);
+      });
+
+      document.getElementById('btnPrintPdf').addEventListener('click', () => {
+        Exporter.printPDF();
+      });
+
+      document.getElementById('btnExportJson').addEventListener('click', () => {
+        Exporter.exportJSON(profile);
+      });
+    });
+  </script>
+</body>
+</html>

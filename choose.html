@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Category & Template - Profile Craft</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/choose.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="brand-text">
+        <h1>Profile Craft</h1>
+        <span>Portfolio & CV Builder</span>
+      </div>
+    </a>
+
+    <div class="step-indicator">
+      <div class="step-item completed"><span class="step-num"><i class="fa-solid fa-check"></i></span> Setup</div>
+      <div class="step-divider"></div>
+      <div class="step-item active"><span class="step-num">2</span> Template</div>
+      <div class="step-divider"></div>
+      <div class="step-item"><span class="step-num">3</span> Fill Details</div>
+      <div class="step-divider"></div>
+      <div class="step-item"><span class="step-num">4</span> Output</div>
+    </div>
+  </nav>
+
+  <!-- SELECTION CONTAINER -->
+  <div class="choose-container">
+    <div class="choose-header">
+      <h2>Step 2: Choose Your Output & Template</h2>
+      <p>Select whether you want to build a Web Portfolio or a Resume/CV, then pick your favorite theme design.</p>
+    </div>
+
+    <!-- CATEGORY SELECTION -->
+    <div class="category-grid">
+      <div class="category-card selected" id="catPortfolio" data-mode="portfolio">
+        <div class="selection-badge"><i class="fa-solid fa-check"></i></div>
+        <div class="category-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Web Portfolio</h3>
+        <p>Interactive multi-section web layout with hero, glass cards, projects grid, and social links.</p>
+      </div>
+
+      <div class="category-card" id="catCv" data-mode="cv">
+        <div class="selection-badge"><i class="fa-solid fa-check"></i></div>
+        <div class="category-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <h3>Resume / CV</h3>
+        <p>Structured 1 or 2 page print-ready document formatted for ATS and professional applications.</p>
+      </div>
+    </div>
+
+    <!-- TEMPLATES GALLERY -->
+    <div class="templates-gallery">
+      <div class="section-title">Select Design Theme</div>
+      <div class="template-grid" id="templateGrid">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+
+    <!-- NAVIGATION BUTTONS -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="index.html" class="btn"><i class="fa-solid fa-arrow-left"></i> Back to Setup</a>
+      <button class="btn btn-primary btn-lg" id="btnNext">Proceed to Fill Details <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/storage.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let selectedMode = AppStorage.getMode();
+      let selectedTemplate = AppStorage.getTemplate();
+
+      const catPortfolio = document.getElementById('catPortfolio');
+      const catCv = document.getElementById('catCv');
+      const templateGrid = document.getElementById('templateGrid');
+      const btnNext = document.getElementById('btnNext');
+
+      const PORTFOLIO_TEMPLATES = [
+        { id: 'pf-theme-glass', name: 'Modern Glassmorphic', boxClass: 'box-glass', desc: 'Sleek dark mode with neon glow and blurred cards' },
+        { id: 'pf-theme-minimal', name: 'Minimalist Clean', boxClass: 'box-minimal', desc: 'Crisp typography and elegant whitespace' },
+        { id: 'pf-theme-vibrant', name: 'Creative Vibrant', boxClass: 'box-vibrant', desc: 'Bold gradient headers and colorful badges' },
+        { id: 'pf-theme-terminal', name: 'Developer Terminal', boxClass: 'box-terminal', desc: 'Tech monospaced font with code prompt styling' }
+      ];
+
+      const CV_TEMPLATES = [
+        { id: 'cv-theme-executive', name: 'Professional Executive', boxClass: 'box-executive', desc: 'Traditional 2-column header layout' },
+        { id: 'cv-theme-modern', name: 'Modern Minimal Resume', boxClass: 'box-minimal', desc: 'Center aligned header with timeline accents' },
+        { id: 'cv-theme-sidebar', name: 'Creative Sidebar Resume', boxClass: 'box-sidebar', desc: 'Left dark sidebar with contact & skills pane' }
+      ];
+
+      function renderTemplates() {
+        const list = selectedMode === 'portfolio' ? PORTFOLIO_TEMPLATES : CV_TEMPLATES;
+        templateGrid.innerHTML = list.map(t => `
+          <div class="template-card ${t.id === selectedTemplate ? 'selected' : ''}" data-id="${t.id}">
+            <div class="template-preview-box ${t.boxClass}">
+              <strong>${t.name}</strong>
+            </div>
+            <h4>${t.name}</h4>
+            <span>${t.desc}</span>
+          </div>
+        `).join('');
+
+        // Bind clicks
+        document.querySelectorAll('.template-card').forEach(card => {
+          card.addEventListener('click', () => {
+            document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedTemplate = card.dataset.id;
+          });
+        });
+      }
+
+      function updateCategoryUI() {
+        if (selectedMode === 'portfolio') {
+          catPortfolio.classList.add('selected');
+          catCv.classList.remove('selected');
+          if (!PORTFOLIO_TEMPLATES.find(t => t.id === selectedTemplate)) {
+            selectedTemplate = PORTFOLIO_TEMPLATES[0].id;
+          }
+        } else {
+          catCv.classList.add('selected');
+          catPortfolio.classList.remove('selected');
+          if (!CV_TEMPLATES.find(t => t.id === selectedTemplate)) {
+            selectedTemplate = CV_TEMPLATES[0].id;
+          }
+        }
+        renderTemplates();
+      }
+
+      catPortfolio.addEventListener('click', () => { selectedMode = 'portfolio'; updateCategoryUI(); });
+      catCv.addEventListener('click', () => { selectedMode = 'cv'; updateCategoryUI(); });
+
+      btnNext.addEventListener('click', () => {
+        AppStorage.saveMode(selectedMode);
+        AppStorage.saveTemplate(selectedTemplate);
+        window.location.href = 'builder.html';
+      });
+
+      updateCategoryUI();
+    });
+  </script>
+</body>
+</html>
