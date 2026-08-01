@@ -156,4 +156,4 @@
 .box-vibrant { background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; }
 .box-terminal { background: #0d1117; color: #7ee787; font-family: monospace; }
 .box-executive { background: #ffffff; border-top: 4px solid #1e293b; color: #1e293b; }
-.box-sidebar { background: linear-gradient(90deg, #1e293b 35%, #ffffff 35%); }
+.box-sidebar { background: linear-gradient(90deg, #1e293b 35%, #ffffff 35%); color: #0b0f19; }
