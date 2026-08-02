@@ -1,32 +1,144 @@
-# Profile Craft - Portfolio & CV Generator
+# 🚀 Profile Craft – Portfolio & CV Generator
 
-A modern, responsive multi-page web application to create, customize, and export professional **Web Portfolios** and **Resumes / CVs**.
+A modern, responsive web application to create, customize, and export professional **Web Portfolios** and **Resumes/CVs** with beautiful themes and real-time preview.
 
-## 🚀 Page Structure
+## 🌐 Live Demo
 
-1. **`index.html`** - Landing Page & Quick Personal Setup
-2. **`choose.html`** - Choose Output Category (Portfolio vs. CV) & Select Theme Design
-3. **`builder.html`** - Form Detail Editor with Real-Time Live Split Preview
-4. **`output.html`** - Final Presentation View with Download HTML, Print/PDF, and JSON Export
+**Website:** https://first-hackathon-2026.vercel.app
 
-## 🎨 Themes Included
+## 📂 GitHub Repository
 
-### Portfolio Themes
-- **Modern Glassmorphic** (Dark mode with neon glow & blurred cards)
-- **Minimalist Clean** (Crisp typography & elegant whitespace)
-- **Creative Vibrant** (Bold gradient headers & colorful badges)
-- **Developer Terminal** (Tech monospaced font & code prompt styling)
+**Repository:** https://github.com/rudradebnath381-coder/First-hackathon-
 
-### Resume / CV Themes
-- **Professional Executive** (Classic 2-column header layout)
-- **Modern Minimal Resume** (Centered header with timeline accents)
-- **Creative Sidebar Resume** (Left dark sidebar with contact & skills pane)
+---
 
-## 💻 How to Run Locally
+## ✨ Features
 
-Open `index.html` directly in your browser or run a simple local web server:
+* 🎨 Multiple Portfolio & Resume Themes
+* ⚡ Real-Time Live Preview
+* 📝 Easy Form-Based Editor
+* 📱 Fully Responsive Design
+* 🌙 Modern & Clean UI
+* 📄 Print-Friendly Resume
+* 💾 Export Data as JSON
+* 📥 Download Portfolio as HTML
+* 🚀 Fast & Lightweight
+
+---
+
+# 📄 Pages
+
+| Page           | Description                                 |
+| -------------- | ------------------------------------------- |
+| `index.html`   | Landing Page & Personal Information Setup   |
+| `choose.html`  | Choose Portfolio or Resume & Select Theme   |
+| `builder.html` | Form Builder with Real-Time Live Preview    |
+| `output.html`  | Final Output with Download & Export Options |
+
+---
+
+# 🎨 Available Themes
+
+## 🌐 Portfolio
+
+* Modern Glassmorphic
+* Minimalist Clean
+* Creative Vibrant
+* Developer Terminal
+
+## 📄 Resume / CV
+
+* Professional Executive
+* Modern Minimal Resume
+* Creative Sidebar Resume
+
+---
+
+# 🛠️ Built With
+
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
+* Responsive Web Design
+* Local Storage
+
+---
+
+# 🚀 Getting Started
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/rudradebnath381-coder/First-hackathon-.git
+```
+
+### Open the Project
+
+```bash
+cd First-hackathon-
+```
+
+### Run a Local Server
 
 ```bash
 python -m http.server 8000
 ```
-Then visit `http://localhost:8000`.
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+Or simply open `index.html` in your browser.
+
+---
+
+# 📤 Export Options
+
+* HTML Portfolio
+* Resume / CV
+* Print to PDF
+* JSON Backup
+
+---
+
+# 📱 Responsive
+
+Works seamlessly on:
+
+* 💻 Desktop
+* 💼 Laptop
+* 📱 Mobile
+* 📲 Tablet
+
+---
+
+# 🔮 Future Enhancements
+
+* AI Portfolio Generator
+* AI Resume Content Assistant
+* Drag & Drop Sections
+* User Authentication
+* Cloud Project Storage
+* ATS Resume Checker
+* LinkedIn Import
+* Additional Premium Themes
+
+---
+
+# 👨💻 Hackathon Project
+
+**Profile Craft** was developed as a hackathon project to simplify the creation of professional portfolios and resumes through an intuitive, modern, and responsive interface.
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving it a **Star ⭐** on GitHub!
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
